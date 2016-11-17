@@ -111,8 +111,42 @@
 		    array_push($diner, ['name'=>$name[$x], 'up'=>$up, 'down'=>$down]);
     	}
     }
-    // $res = ['data'=>$data_array];
-    $res = $data_array;
+    $index = 0;
+    $s = array();
+    $e = array();
+    //read from time table and do it
+    $sql = "SELECT * FROM time";
+	mysql_select_db('mess');
+	$retval = mysql_query( $sql, $conn );
+	if(! $retval )
+	{
+	  die('Could not select meal: ' . mysql_error());
+	}
+	while($row = mysql_fetch_array($retval, MYSQL_ASSOC))
+    {
+    	array_push($s, "{$row['start_time']}");
+    	array_push($e, "{$row['end_time']}");
+    }
+    $current_time = date("His");
+    if($current_time <= $e[0])
+    {
+    	$index = 0;
+    }
+    else if($current_time > $e[0] && $current_time <= $e[1])
+    {
+    	$index = 1;
+    }
+    else if($current_time > $e[1] && $current_time <= $e[2])
+    {
+    	$index = 2;
+    }
+    else
+    {
+    	$index = 3;
+    }
+
+    $res = array();
+    array_push($res, ['index' => $index, 'breakfast' => $bfast, 'lunch' => $lunch, "snacks" => $eveng, "dinner" => $diner ]);
 	echo json_encode($res);
 	mysql_close($conn);
   	exit();
