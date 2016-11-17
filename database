@@ -37,3 +37,26 @@ create table hidden
 	userID varchar(100), 
 	postId int
 );
+
+
+create table menu_items
+(
+	name varchar(100) not null,
+	up int,
+	down int,
+	primary key (name)
+);
+
+create table day_meal
+(
+	name varchar(100),
+	day int,
+	meal varchar(40)
+);
+
+create table time
+(
+	meal varchar(40),
+	start_time varchar(40),
+	end_time varchar(40)
+);
