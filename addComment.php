@@ -6,7 +6,8 @@
     $userId = $json->{'userId'};
     $text = $json->{'text'};
     $postId = $json->{'postId'};
-    $date = $json->{'date'};
+    date_default_timezone_set("Asia/Kolkata");
+    $date = date("Y-m-d h:i:sa");
 
     $dbhost = 'localhost:3306';
 	$dbuser = 'root';

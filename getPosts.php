@@ -107,11 +107,12 @@
 	    }
 	    for($y=0; $y<$comment_count; $y++)
 	    {
-	    	array_push($comments_array, [ 'userId' => $userId_comment[$y], 'text' => $comment_text[$y], 'date' => $comment_date[$y] ]);  	
+	    	array_push($comments_array, [ 'commentId'=>$commentId[$y], 'userId' => $userId_comment[$y], 'text' => $comment_text[$y], 'date' => $comment_date[$y] ]);  	
 	    }
-	    array_push($data_array, ['userId'=> $userId_post[$x], 'text'=> $text[$x], 'imageURL' => $imageURL[$x], 'userImageURL'=> $userImageURL[$x], 'upVotes' => $upVotes[$x], 'date' => $date[$x], 'liked' => $myLikedPosts[$x], 'comments' => $comments_array, 'hidden' => $myHiddenPosts[$x] ]);
+	    array_push($data_array, ['postId'=>$id[$x], 'userId'=> $userId_post[$x], 'text'=> $text[$x], 'imageURL' => $imageURL[$x], 'userImageURL'=> $userImageURL[$x], 'upVotes' => $upVotes[$x], 'date' => $date[$x], 'liked' => $myLikedPosts[$x], 'comments' => $comments_array, 'hidden' => $myHiddenPosts[$x] ]);
     }
-    $res = ['data'=>$data_array];
+    // $res = ['data'=>$data_array];
+    $res = $data_array;
 	echo json_encode($res);
 	mysql_close($conn);
 }
