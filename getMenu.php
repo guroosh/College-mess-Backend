@@ -117,8 +117,7 @@ if ($current_time <= $e[0]) {
 } else {
     $index = 3;
 }
-$res = array();
-array_push($res, ['index' => $index, 'breakfast' => $bfast, 'lunch' => $lunch, "snacks" => $eveng, "dinner" => $diner]);
+$res = ['index' => $index, 'breakfast' => $bfast, 'lunch' => $lunch, "snacks" => $eveng, "dinner" => $diner];
 echo json_encode($res);
 mysql_close($conn);
 exit();
