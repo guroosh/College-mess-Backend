@@ -7,7 +7,8 @@
     $text = $json->{'text'};
     $imageURL = $json->{'imageURL'};
     $userImageURL = $json->{'userImageURL'};
-    $date = $json->{'date'};
+    date_default_timezone_set("Asia/Kolkata");
+    $date = date("Y-m-d h:i:sa");
 
     $dbhost = 'localhost:3306';
 	$dbuser = 'root';
@@ -28,5 +29,3 @@
 	mysql_close($conn);
     echo("1");  
     exit();
-   
-?>
