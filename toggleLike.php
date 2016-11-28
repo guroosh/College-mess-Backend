@@ -53,6 +53,14 @@
 		{
 		  die('Could not delete like: ' . mysql_error());
 		}
+
+        $sql = "UPDATE posts SET upVotes = upVotes - 1 WHERE id = '$postId'";
+        mysql_select_db('mess');
+        $retval = mysql_query( $sql, $conn );
+        if(! $retval )
+        {
+            die('Could not delete like: ' . mysql_error());
+        }
     }
     else if($count == 0)
     {
@@ -63,6 +71,13 @@
 		{
 		  die('Could not add like: ' . mysql_error());
 		}
+        $sql = "UPDATE posts SET upVotes = upVotes + 1 WHERE id = '$postId'";
+        mysql_select_db('mess');
+        $retval = mysql_query( $sql, $conn );
+        if(! $retval )
+        {
+            die('Could not delete like: ' . mysql_error());
+        }
     }
     else
     {

@@ -26,15 +26,16 @@
             width: 40px;
             height: 40px;
             border-radius: 50%;
-
+            padding-right: 2.5%;
         }
 
-        #camera {
+        #mailing {
             float: right;
             width: 40px;
             height: 40px;
             border-radius: 50%;
             margin-left: 1%;
+            padding-right: 2.5%;
         }
 
         .row {
@@ -68,7 +69,7 @@
                 <li><a href="#">Contact</a></li> -->
             </ul>
             <ul class="nav navbar-nav navbar-right">
-<!--                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>-->
+                <!--                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>-->
             </ul>
         </div>
     </div>
@@ -77,14 +78,80 @@
 <br>
 <div class="container" style="display: inline-block;">
     <span style="font-size: 30px; margin-left: 16%;">Current menu</span>
-    <button type="button" id="camera" name="camera" class="btn btn-primary text-center"><i style="text-align: center;"
-                                                                                           class="material-icons">camera_alt</i>
-    </button>
-    <button type="button" id="feedback" name="feedback" class="btn btn-primary text-center"><i class="material-icons">feedback</i>
-    </button>
+    <button type="button" id="mailing" data-toggle="modal" data-target="#myModal1" name="mailing"
+            class="btn btn-primary text-center"><i style="text-align: center;" class="material-icons">email</i></button>
+    <button type="button" id="feedback" data-toggle="modal" data-target="#myModal2" name="feedback"
+            class="btn btn-primary text-center"><i class="material-icons">feedback</i></button>
+</div>
+<!--Modal 1-->
+<div id="myModal1" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Change mailing address</h4>
+            </div>
+            <div class="modal-body">
+                <form id="form1">
+                    <input type="text" name="new_email" id="new_email" required autocomplete="off">
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--Modal 2-->
+<div id="myModal2" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Change feedback form</h4>
+            </div>
+            <div class="modal-body">
+                <form id="form2">
+                    <input type="text" name="new_feedback" id="new_feedback" required autocomplete="off">
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+
+    </div>
 </div>
 
 <div class="jumbotron">
+    <div class="row">
+        <div>
+            <div class="panel panel-default">
+                <div class="panel-body" id="mailing1">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div>
+            <div class="panel">
+                <div class="panel-body" id="feedback1">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div>
+            <div class="panel">
+                <div class="panel-body">
+                    <h3>Current menu: </h3>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="row">
         <div>
             <div class="panel panel-default">
@@ -309,7 +376,8 @@
             <h3>Add meal</h3>
             <hr class="hr">
             <label for="item_name">Item name</label>
-            <input style="margin-left: 1%;" type="text" class="form-control" id="item_name" placeholder="Example: Rice" required autocomplete="off">
+            <input style="margin-left: 1%;" type="text" class="form-control" id="item_name"
+                   placeholder="Example: Rice" required autocomplete="off">
             <br>
             <br>
             <br>
@@ -382,19 +450,24 @@
                     <input class="form-check-input" type="checkbox" id="blankCheckbox9" value="9" aria-label="...">
                 </label>
                 <label class="form-check-label col-md-1">
-                    <input class="form-check-input" type="checkbox" id="blankCheckbox10" value="10" aria-label="...">
+                    <input class="form-check-input" type="checkbox" id="blankCheckbox10" value="10"
+                           aria-label="...">
                 </label>
                 <label class="form-check-label col-md-1">
-                    <input class="form-check-input" type="checkbox" id="blankCheckbox11" value="11" aria-label="...">
+                    <input class="form-check-input" type="checkbox" id="blankCheckbox11" value="11"
+                           aria-label="...">
                 </label>
                 <label class="form-check-label col-md-1">
-                    <input class="form-check-input" type="checkbox" id="blankCheckbox12" value="12" aria-label="...">
+                    <input class="form-check-input" type="checkbox" id="blankCheckbox12" value="12"
+                           aria-label="...">
                 </label>
                 <label class="form-check-label col-md-1">
-                    <input class="form-check-input" type="checkbox" id="blankCheckbox13" value="13" aria-label="...">
+                    <input class="form-check-input" type="checkbox" id="blankCheckbox13" value="13"
+                           aria-label="...">
                 </label>
                 <label class="form-check-label col-md-1">
-                    <input class="form-check-input" type="checkbox" id="blankCheckbox14" value="14" aria-label="...">
+                    <input class="form-check-input" type="checkbox" id="blankCheckbox14" value="14"
+                           aria-label="...">
                 </label>
             </div>
         </div>
@@ -405,25 +478,32 @@
                     Evening snack
                 </label>
                 <label class="form-check-label col-md-1">
-                    <input class="form-check-input" type="checkbox" id="blankCheckbox15" value="15" aria-label="...">
+                    <input class="form-check-input" type="checkbox" id="blankCheckbox15" value="15"
+                           aria-label="...">
                 </label>
                 <label class="form-check-label col-md-1">
-                    <input class="form-check-input" type="checkbox" id="blankCheckbox16" value="16" aria-label="...">
+                    <input class="form-check-input" type="checkbox" id="blankCheckbox16" value="16"
+                           aria-label="...">
                 </label>
                 <label class="form-check-label col-md-1">
-                    <input class="form-check-input" type="checkbox" id="blankCheckbox17" value="17" aria-label="...">
+                    <input class="form-check-input" type="checkbox" id="blankCheckbox17" value="17"
+                           aria-label="...">
                 </label>
                 <label class="form-check-label col-md-1">
-                    <input class="form-check-input" type="checkbox" id="blankCheckbox18" value="18" aria-label="...">
+                    <input class="form-check-input" type="checkbox" id="blankCheckbox18" value="18"
+                           aria-label="...">
                 </label>
                 <label class="form-check-label col-md-1">
-                    <input class="form-check-input" type="checkbox" id="blankCheckbox19" value="19" aria-label="...">
+                    <input class="form-check-input" type="checkbox" id="blankCheckbox19" value="19"
+                           aria-label="...">
                 </label>
                 <label class="form-check-label col-md-1">
-                    <input class="form-check-input" type="checkbox" id="blankCheckbox20" value="20" aria-label="...">
+                    <input class="form-check-input" type="checkbox" id="blankCheckbox20" value="20"
+                           aria-label="...">
                 </label>
                 <label class="form-check-label col-md-1">
-                    <input class="form-check-input" type="checkbox" id="blankCheckbox21" value="21" aria-label="...">
+                    <input class="form-check-input" type="checkbox" id="blankCheckbox21" value="21"
+                           aria-label="...">
                 </label>
             </div>
         </div>
@@ -434,38 +514,64 @@
                     Dinner
                 </label>
                 <label class="form-check-label col-md-1">
-                    <input class="form-check-input" type="checkbox" id="blankCheckbox22" value="22" aria-label="...">
+                    <input class="form-check-input" type="checkbox" id="blankCheckbox22" value="22"
+                           aria-label="...">
                 </label>
                 <label class="form-check-label col-md-1">
-                    <input class="form-check-input" type="checkbox" id="blankCheckbox23" value="23" aria-label="...">
+                    <input class="form-check-input" type="checkbox" id="blankCheckbox23" value="23"
+                           aria-label="...">
                 </label>
                 <label class="form-check-label col-md-1">
-                    <input class="form-check-input" type="checkbox" id="blankCheckbox24" value="24" aria-label="...">
+                    <input class="form-check-input" type="checkbox" id="blankCheckbox24" value="24"
+                           aria-label="...">
                 </label>
                 <label class="form-check-label col-md-1">
-                    <input class="form-check-input" type="checkbox" id="blankCheckbox25" value="25" aria-label="...">
+                    <input class="form-check-input" type="checkbox" id="blankCheckbox25" value="25"
+                           aria-label="...">
                 </label>
                 <label class="form-check-label col-md-1">
-                    <input class="form-check-input" type="checkbox" id="blankCheckbox26" value="26" aria-label="...">
+                    <input class="form-check-input" type="checkbox" id="blankCheckbox26" value="26"
+                           aria-label="...">
                 </label>
                 <label class="form-check-label col-md-1">
-                    <input class="form-check-input" type="checkbox" id="blankCheckbox27" value="27" aria-label="...">
+                    <input class="form-check-input" type="checkbox" id="blankCheckbox27" value="27"
+                           aria-label="...">
                 </label>
                 <label class="form-check-label col-md-1">
-                    <input class="form-check-input" type="checkbox" id="blankCheckbox28" value="28" aria-label="...">
+                    <input class="form-check-input" type="checkbox" id="blankCheckbox28" value="28"
+                           aria-label="...">
                 </label>
             </div>
         </div>
         <br>
         <br>
         <div class="row text-center">
-            <button type="submit" name="add" id="add" class="btn btn-success"><b style="font-size: 18px;">Add item</b>
+            <button type="submit" name="add" id="add" class="btn btn-success"><b style="font-size: 18px;">Add
+                    item</b>
+            </button>
+        </div>
+    </form>
+    <br>
+    <br>
+</div>
+<div class="container">
+    <form class="form-inline" id="delete_form">
+        <div class="row">
+            <h3>Remove meal</h3>
+            <br>
+            <label for="item_name">Item name</label>
+            <input style="margin-left: 1%;" type="text" class="form-control" id="delete_item"
+                   placeholder="Example: Rice" required autocomplete="off">
+            <button type="submit" name="delete_button" id="delete_button" class="btn btn-primary"><b style="font-size: 18px;">Delete item</b>
             </button>
         </div>
     </form>
 </div>
 <br>
+<br><br>
+<br><br>
 <br>
+
 <script type="text/javascript" src="assets/js/app.js"></script>
 <script type="text/javascript" src="adminScript.js"></script>
 </body>

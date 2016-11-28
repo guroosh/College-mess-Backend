@@ -60,3 +60,14 @@ create table time
 	start_time varchar(40),
 	end_time varchar(40)
 );
+
+create table links
+(
+    mailing varchar(80),
+    feedback varchar(200)
+);
+
+GOOGLE: todo: multiple gmail login but only iiitd account, dynamic user name
+IMAGES: todo: , images, images(POST),  image menu
+DYNAMIC: mailing id, feedback form.
+todo: adminPortal (ask prachi), time table change values
