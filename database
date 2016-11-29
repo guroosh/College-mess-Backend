@@ -66,8 +66,13 @@ create table links
     mailing varchar(80),
     feedback varchar(200)
 );
+create table empty
+(
+    id int,
+    primary key (id)
+);
 
 GOOGLE: todo: multiple gmail login but only iiitd account, dynamic user name
-IMAGES: todo: , images, images(POST),  image menu
+IMAGES: todo: , images, images(POST),  image menu(only backend change)
 DYNAMIC: mailing id, feedback form.
 todo: adminPortal (ask prachi), time table change values
