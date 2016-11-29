@@ -94,6 +94,7 @@
 		$comment_count = 0;
 		$comments_array = array();
 		$commentId = array();
+        $comment_userImageURL = array();
 	    $userId_comment = array();
 	    $comment_date = array();
 	    $comment_text = array();
@@ -104,10 +105,11 @@
 			array_push($userId_comment, "{$row['userId']}");
 			array_push($comment_date, "{$row['date']}");
 			array_push($comment_text, "{$row['text']}");
+            array_push($comment_userImageURL, "{$row['userImageURL']}");
 	    }
 	    for($y=0; $y<$comment_count; $y++)
 	    {
-	    	array_push($comments_array, [ 'commentId'=>$commentId[$y], 'userId' => $userId_comment[$y], 'text' => $comment_text[$y], 'date' => $comment_date[$y] ]);  	
+	    	array_push($comments_array, [ 'userImageURL'=>$comment_userImageURL[$y], 'commentId'=>$commentId[$y], 'userId' => $userId_comment[$y], 'text' => $comment_text[$y], 'date' => $comment_date[$y] ]);
 	    }
 	    array_push($data_array, ['postId'=>$id[$x], 'userId'=> $userId_post[$x], 'text'=> $text[$x], 'imageURL' => $imageURL[$x], 'userImageURL'=> $userImageURL[$x], 'upVotes' => $upVotes[$x], 'date' => $date[$x], 'liked' => $myLikedPosts[$x], 'comments' => $comments_array, 'hidden' => $myHiddenPosts[$x] ]);
     }

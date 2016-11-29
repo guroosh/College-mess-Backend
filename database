@@ -21,6 +21,7 @@ create table comments
 	id int not null auto_increment,
 	postId int,
 	userId varchar(100),
+	userImageURL varchar(200),
 	date varchar(100),
 	text varchar(400),
 	primary key (id)
@@ -72,7 +73,7 @@ create table empty
     primary key (id)
 );
 
-GOOGLE: todo: multiple gmail login but only iiitd account, dynamic user name
-IMAGES: todo: , images, images(POST),  image menu(only backend change)
+GOOGLE: todo: multiple gmail login but only iiitd account, dynamic user name, image
+IMAGES: todo: images(POST)
 DYNAMIC: mailing id, feedback form.
-todo: adminPortal (ask prachi), time table change values
+todo: adminPortal (ask prachi)
